@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-image: url(/images/blueflowerwoman-transformed@4x.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem auto;
+  max-width: 50rem;
+  max-height: 50rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(0.25rem);
+  height: 100vh;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.projects_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.projects_header {
+  padding-top: 1rem;
+  font-size: 5rem;
+  text-align: center;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem;
+  text-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.projects_li {
+  text-align: center;
+  margin: 2rem;
+  font-size: 2rem;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+  text-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+.projects_li:last-of-type {
+  border-bottom: none;
+}
