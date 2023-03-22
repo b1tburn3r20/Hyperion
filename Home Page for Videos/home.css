@@ -7,12 +7,19 @@ body {
   background-color: #191414;
   color: #ffffff;
 }
+.youtubesearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
 .home_header {
   text-align: center;
   font-weight: 700;
   font-size: 3.5rem;
   padding: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 .home_left-space {
@@ -27,13 +34,106 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 3rem;
   border: 0.1rem solid #484848;
 }
 
 .home_video {
-  width: 30rem;
-  height: 20rem;
-  margin: 1rem;
+  width: 34.97rem;
+  height: 23.5rem;
+  margin: 2rem;
   border: 0.1rem solid #484848;
+}
+/* ... */
+.youtubesearch .search-button {
+  background-color: #ff0000; /* YouTube red */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.youtubesearch .search-button:hover {
+  background-color: #d50000; /* Darker red on hover */
+}
+/* ... */
+/* ... */
+.youtubesearch .search-input {
+  background-color: #121212;
+  border: 1px solid #303030;
+  border-radius: 2rem;
+  padding: 6px 12px;
+  font-size: 16px;
+  color: #ffffff;
+  outline: none;
+  height: 2rem;
+  width: 30rem;
+}
+
+.youtubesearch .search-input::placeholder {
+  color: #808080;
+  opacity: 1;
+}
+
+.youtubesearch .search-input:focus {
+  border-color: #ff0000;
+}
+/* ... */
+/* ... */
+.youtubesearch {
+  position: relative;
+  display: inline-block;
+}
+
+.youtubesearch .search-input {
+  background-color: #121212;
+  border: 1px solid #303030;
+  border-radius: 2rem;
+  padding: 6px 12px;
+  padding-right: 40px; /* Add extra padding to the right side */
+  font-size: 16px;
+  color: #ffffff;
+  outline: none;
+  height: 2rem;
+  width: 30rem;
+}
+
+.youtubesearch .search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff0000; /* YouTube red */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 0 2rem 2rem 0; /* Add rounded corners only to the right side */
+  padding: 6px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  height: 2.8rem; /* Make the button the same height as the input */
+}
+
+.youtubesearch .search-button:hover {
+  background-color: #d50000; /* Darker red on hover */
+}
+/* ... */
+/* ... */
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.youtubesearch {
+  position: relative;
+  display: inline-block;
+}
+/* ... */
+#results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

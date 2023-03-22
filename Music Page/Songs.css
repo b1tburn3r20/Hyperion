@@ -20,7 +20,8 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 3rem;
+  border-bottom: 1px solid #6ae0a1;
+  margin-bottom: 2rem;
 }
 
 .music_feed {
@@ -40,7 +41,6 @@ body {
   align-items: center;
   width: 30%;
   margin-bottom: 3rem;
-  border: 1px solid #6ae0a1;
 }
 
 .music_song:hover {
@@ -64,4 +64,35 @@ body {
   font-size: 1.2rem;
   font-weight: 400;
   margin-bottom: 1rem;
+}
+.playlists_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-left: calc(
+    3rem + 50px
+  ); /* Adjust this value based on the width of your navbar */
+  margin-right: 3rem;
+}
+.music_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 3rem;
+  flex: 1; /* Add this line to evenly distribute the width */
+}
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #282828;
+  border-radius: 4px;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #282828 #181818;
 }
