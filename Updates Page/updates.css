@@ -1,4 +1,4 @@
-::root {
+:root {
   --grey-color: #ccc;
 }
 
@@ -6,13 +6,11 @@
   padding: 0;
   margin: 0;
 }
-.updates {
+.content {
+  margin-left: 10rem;
+  font-size: 1.5rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-.TextContainer {
-  font-size: 1.5rem;
 }
 
 .updates_footer {
@@ -25,42 +23,56 @@
 }
 
 .textbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-grow: 1;
   margin: 0 1rem;
+  padding-bottom: 1rem;
 }
 
 .updates_input {
-  width: 100%;
+  width: 80vw;
+  margin-left: 10rem;
   height: 4rem;
-  border-radius: 2rem;
-  background-color: none;
+  background: none;
   font-size: 1.7rem;
-  border-color: rgb(255, 0, 0);
-  padding: 0.5rem;
-  border-radius: 1rem;
-  border: 1px solid #ccc;
+  padding: 0;
+  border-radius: 2.5rem;
+  border: solid 2px #ccc;
+}
+.updates_input::placeholder,
+.updates_input::-webkit-input-placeholder {
+  padding-left: 1.8rem;
 }
 
-/* .updates_button {
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  border: none;
-  background-color: #0084ff;
-  color: white;
-  font-size: 1rem;
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3rem 1.4rem 1rem;
+  color: rgb(215, 215, 215);
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-} */
+}
 
-/* .updates_button:hover {
-  background-color: #0057b8;
-} */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(59, 59, 59);
+  border-radius: 5px;
+}
 
 .chat-container {
-  border: 1px solid rgb(184, 184, 184);
   padding: 1rem;
   height: 500px;
   overflow-y: auto;
+  max-width: 100%;
 }
 
 .chat-message {
@@ -70,12 +82,13 @@
   border-radius: 1rem;
 }
 
-.received {
-  background-color: #eaeaea;
+.chat-message-left {
+  background-color: #373737;
+  color: white;
   align-self: flex-start;
 }
 
-.sent {
+.chat-message-right {
   background-color: #0084ff;
   color: white;
   align-self: flex-end;
@@ -84,29 +97,6 @@
 .timestamp {
   font-size: 0.8rem;
   margin-left: 1rem;
-}
-
-.input-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-}
-.updates_i {
-  color: rgb(120, 120, 120);
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #f5f5f5;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 5px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -119,43 +109,37 @@
   }
 
   .updates_input {
-    width: 70%;
-  }
-
-  button {
-    font-size: 0.9rem;
+    width: 70vw;
   }
 }
-.chat-message-left {
-  max-width: 70%;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  background-color: #eaeaea;
-  align-self: flex-start;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100% - 80px);
+  padding-top: 80px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
-.chat-message-right {
-  max-width: 70%;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  background-color: #0084ff;
-  color: white;
-  align-self: flex-end;
-}
-.icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 1rem 1rem 1rem; /* add margin-bottom */
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.textbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  margin: 0 1rem;
-  padding-bottom: 1rem; /* add padding-bottom */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #131313;
 }
