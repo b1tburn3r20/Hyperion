@@ -53,19 +53,14 @@
       <div class="content">
         <div class="container">
           <div class="chat-container">
-            <div class="chat-message chat-message-left">
-              <p>Hey there, we've just launched a new feature!</p>
-              <span class="timestamp">11:23 AM</span>
-            </div>
-            
-            <div class="chat-message chat-message-right">
-              <p>Thanks for letting us know!</p>
-              <span class="timestamp">11:24 AM</span>
-            </div>
+            <div class="chat-messages"></div>
             <div class="input-container">
         </div>
         <footer class="updates_footer">
           <div class="textbar"><input class="updates_input" type="text" placeholder="iMessage" disabled/></div>
+          <!-- Add this button to your HTML file where you want it to appear -->
+          <button onclick="handleNewUpdate()">Add Update</button>
+
   
           <div class="icons">
             <i class="updates_i fa-regular fa-face-grin fa-2xl"></i>
@@ -80,5 +75,7 @@
         src="https://kit.fontawesome.com/1546d6398c.js"
         crossorigin="anonymous"
       ></script>
+      <script src="updates.js"></script>
+
     </body>
 </html>
