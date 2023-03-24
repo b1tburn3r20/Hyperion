@@ -1,0 +1,33 @@
+{
+  "name": "hyperionwebsite",
+  "version": "1.0.0",
+  "description": "Hyperion website using MongoDB Atlas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b1tburn3r20/Hyperion.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "webapp"
+  ],
+  "author": "Alejandro-Bermudez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b1tburn3r20/Hyperion/issues"
+  },
+  "homepage": "https://github.com/b1tburn3r20/Hyperion#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^5.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.0.3"
+  }
+}

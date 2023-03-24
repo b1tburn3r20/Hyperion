@@ -138,6 +138,9 @@ nav:hover li span {
 .youtube:hover i {
   color: #ff0000;
 }
+.youtube i {
+  color: #ff0000;
+}
 .spotify:hover i {
   color: #1db954;
 }

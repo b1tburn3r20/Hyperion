@@ -36,14 +36,15 @@ body {
   align-items: center;
   justify-content: center;
   padding: 3rem;
-  border: 0.1rem solid #484848;
 }
 
 .home_video {
   width: 34.97rem;
   height: 23.5rem;
   margin: 2rem;
+  z-index: auto;
   border: 0.1rem solid #484848;
+  border-radius: 1rem;
 }
 /* ... */
 .youtubesearch .search-button {
