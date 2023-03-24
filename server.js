@@ -22,3 +22,21 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+
+// Import userRoutes
+const userRoutes = require('./routes/userRoutes');
+
+// Set up sessions
+app.use(
+  session({
+    secret: 'your-secret-key', // Replace with your own secret key
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
+  })
+);
+
+// Use the user routes
+app.use('/api/users', userRoutes);
