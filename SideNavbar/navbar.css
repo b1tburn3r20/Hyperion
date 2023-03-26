@@ -7,11 +7,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
-  background-color: #191414;
   color: #ffffff;
 }
 
 nav {
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,7 +50,7 @@ nav {
 }
 
 .menu-container.active {
-  height: 50%;
+  height: 30%;
   width: 35%;
   overflow-y: scroll;
 }
