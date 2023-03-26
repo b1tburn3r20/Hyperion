@@ -1,30 +1,35 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Current Projects</title>
-    <link rel="stylesheet" href="currentprojects.css" />
-    <link rel="stylesheet" href="navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Navbar</title>
   </head>
+
   <body>
     <nav>
-      <div class="logo-icon crown">
-        <a href="/HomePageForVideos/index.html"
-          ><i class="nav_i fa-solid fa-crown"></i>
-      </div>
       <ul class="nav_ul">
         <li class="nav_li youtube">
           <a href="/HomePageForVideos/index.html" class="nav_a">
-            <i class="nav_i fa-brands fa-youtube"></i><span class="nav_span">Videos</span>
+            <i class="nav_i fa-brands fa-youtube"></i
+            ><span class="nav_span">Videos</span>
           </a>
         </li>
         <li class="nav_li spotify">
           <a href="/MusicPage/Songs.html" class="nav_a">
-            <i class="nav_i fa-brands fa-spotify"></i><span class="nav_span">Music</span>
+            <i class="nav_i fa-brands fa-spotify"></i
+            ><span class="nav_span">Music</span>
           </a>
         </li>
         <li class="nav_li messages">
           <a href="/UpdatesPage/updates.html" class="nav_a">
-            <i class="nav_i fa-solid fa-message"></i><span class="nav_span">Updates</span>
+            <i class="nav_i fa-solid fa-message"></i
+            ><span class="nav_span">Updates</span>
           </a>
         </li>
         <li class="nav_li progress">
@@ -40,25 +45,19 @@
           </a>
         </li>
       </ul>
+      <div class="bars-icon" onclick="toggleNav()">
+        <i class="nav_i fa-solid fa-bars"></i>
+      </div>
       <div class="toggle">
         <button class="toggle-theme">
           <i class="nav_i fa-solid fa-sun"></i>
         </button>
       </div>
     </nav>
-    <div class="container">
-      <div class="projects_header">Current Projects</div>
-      <ul class="projects_list">
-        <li class="projects_li"> <a href="https://www.checkli.com/checklists/view/641a47c12834d" target="_blank">Hyperion</a> </li>
-        <li class="projects_li">React Online Gaming Shop</li>
-        <li class="projects_li">Coding with Mosh, Advanced Javascript</li>
-        <li class="projects_li">Coding with Mosh, React Course</li>
-      </ul>
-    </div>
-    <script
-      src="https://kit.fontawesome.com/1546d6398c.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="navbar.js"></script>
+    <script>
+      function toggleNav() {
+        document.querySelector(".nav_ul").classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
