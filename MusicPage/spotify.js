@@ -16,47 +16,7 @@ async function getAccessToken() {
   return data.access_token;
 }
 
-function displayAlbums(albums, containerSelector) {
-  const container = document.querySelector(containerSelector + " .music_feed");
 
-  albums.forEach((album) => {
-    const albumDiv = document.createElement("div");
-    albumDiv.className = "music_album";
-
-    const albumTitle = document.createElement("h3");
-    albumTitle.textContent = album.name;
-    albumDiv.appendChild(albumTitle);
-
-    const albumImg = document.createElement("img");
-    albumImg.src = album.images[1].url;
-    albumImg.width = "300";
-    albumImg.height = "300";
-    albumDiv.appendChild(albumImg);
-
-    container.appendChild(albumDiv);
-  });
-}
-
-function displayPlaylists(playlists, containerSelector) {
-  const container = document.querySelector(containerSelector + " .music_feed");
-
-  playlists.forEach((playlist) => {
-    const playlistDiv = document.createElement("div");
-    playlistDiv.className = "music_playlist";
-
-    const playlistTitle = document.createElement("h3");
-    playlistTitle.textContent = playlist.name;
-    playlistDiv.appendChild(playlistTitle);
-
-    const playlistImg = document.createElement("img");
-    playlistImg.src = playlist.images[0].url;
-    playlistImg.width = "300";
-    playlistImg.height = "300";
-    playlistDiv.appendChild(playlistImg);
-
-    container.appendChild(playlistDiv);
-  });
-}
 
 
 // Function to fetch playlist data

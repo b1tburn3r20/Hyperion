@@ -74,16 +74,6 @@ body {
   margin-bottom: 2rem;
 }
 
-.music_feed {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  width: 80%;
-  margin-bottom: 3rem;
-}
-
 .music_song {
   display: flex;
   flex-direction: column;
@@ -167,7 +157,29 @@ body {
 .search-results-container:not(:first-child) {
   margin-left: 3rem;
 }
-
+.results-box {
+  background-color: red;
+  width: 80vw;
+  height: 40vh;
+}
+.music_feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 3rem;
+}
+.results-feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 3rem;
+}
 @media (max-width: 768px) {
   .playlists_wrapper {
     flex-direction: column;
