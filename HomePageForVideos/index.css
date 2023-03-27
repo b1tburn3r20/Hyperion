@@ -89,6 +89,9 @@ body {
   position: relative;
   display: inline-block;
 }
+#results {
+  text-align: center;
+}
 
 .youtubesearch .search-input {
   background-color: #121212;
@@ -138,4 +141,86 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 768px) {
+  html,
+  body,
+  .home_container {
+    margin: 0;
+    padding: 0;
+  }
+  .home_container {
+    flex-direction: column;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .home_video {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .youtubesearch .search-input {
+    width: 90%;
+  }
+
+  #results > div {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 25px;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .home_header {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .youtubesearch .search-input {
+    width: 70vw;
+  }
+  #results {
+    text-align: center;
+  }
+
+  #results .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 25px;
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  #results .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  #results .result_video {
+    width: 80vw;
+    height: auto;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  .menu-container {
+    z-index: 1000;
+  }
 }

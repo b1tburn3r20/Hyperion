@@ -96,3 +96,6 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #282828 #181818;
 }
+.menu-container {
+  z-index: 1000;
+}

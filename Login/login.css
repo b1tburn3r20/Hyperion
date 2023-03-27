@@ -79,3 +79,6 @@ body {
 .forgot-password a:hover {
   text-decoration: underline;
 }
+.menu-container {
+  z-index: 1000;
+}

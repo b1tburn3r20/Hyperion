@@ -34,11 +34,37 @@ function displayVideo(video, index) {
   const videoElement = document.createElement('div');
   videoElement.innerHTML = `
       <h3>${video.snippet.title}</h3>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/${video.id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/${video.id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
   `;
 
   videoDivs[index].appendChild(videoElement);
+  resizeIframe(videoElement.querySelector('iframe'));
 }
+
+
+function resizeIframe(iframe) {
+  if (window.innerWidth <= 768) {
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+  } else {
+    iframe.style.width = '560px';
+    iframe.style.height = '315px';
+  }
+}
+
+window.addEventListener('resize', () => {
+  const iframes = document.querySelectorAll('iframe');
+  iframes.forEach((iframe) => resizeIframe(iframe));
+});
+
+
+window.addEventListener('resize', () => {
+  const iframes = document.querySelectorAll('iframe');
+  iframes.forEach((iframe) => resizeIframe(iframe));
+});
+
 
 // YouTube search query
 const searchBtn = document.getElementById('searchBtn');

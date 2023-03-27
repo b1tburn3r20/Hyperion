@@ -15,7 +15,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: rgb(51, 51, 51, 0.7);
+  backdrop-filter: blur(10px);
   text-decoration: none;
   position: fixed;
   bottom: 0;
@@ -37,20 +38,22 @@ nav {
 }
 
 .menu-container {
-  background-color: rgb(66, 66, 66);
+  background-color: rgb(66, 66, 66, 0.7);
+  backdrop-filter: blur(10px);
   position: fixed;
   bottom: 3.75rem;
-  left: 0;
   right: 0;
   height: 0;
   width: 35%;
   overflow: hidden;
   transition: height 0.3s ease;
   text-align: center;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 .menu-container.active {
-  height: 30%;
+  height: 40%;
   width: 35%;
   overflow-y: scroll;
 }
@@ -258,5 +261,8 @@ nav {
   }
   .fa-stack {
     margin-bottom: 1.5rem;
+  }
+  .menu-container {
+    z-index: 1000;
   }
 }
