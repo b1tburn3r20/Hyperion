@@ -77,27 +77,29 @@ async function fetchPlaylist(accessToken, playlistId, playlistContainer) {
 
 // Function to display songs on the page
 function displaySongs(songs, playlistContainer) {
-    const musicFeed = document.querySelector(playlistContainer + " .music_feed");
-    musicFeed.innerHTML = ""; // Clear the feed
-  
-    songs.forEach((song) => {
-      const track = song.track;
-      const songDiv = document.createElement("div");
-      songDiv.className = "music_song";
-  
-      // Add Spotify Play Button
-      const playButton = document.createElement("iframe");
-      playButton.src = `https://open.spotify.com/embed/track/${track.id}`;
-      playButton.width = "300";
-      playButton.height = "80";
-      playButton.frameBorder = "0";
-      playButton.allowTransparency = "true";
-      playButton.allow = "encrypted-media";
-      songDiv.appendChild(playButton);
-  
-      musicFeed.appendChild(songDiv);
-    });
-  }
+  const musicFeed = document.querySelector(playlistContainer + " .music_feed");
+  musicFeed.innerHTML = ""; // Clear the feed
+
+  songs.forEach((song) => {
+    const track = song.track ? song.track : song; // Updated to handle both cases
+
+    const songDiv = document.createElement("div");
+    songDiv.className = "music_song";
+
+    // Add Spotify Play Button
+    const playButton = document.createElement("iframe");
+    playButton.src = `https://open.spotify.com/embed/track/${track.id}`;
+    playButton.width = "300";
+    playButton.height = "80";
+    playButton.frameBorder = "0";
+    playButton.allowTransparency = "true";
+    playButton.allow = "encrypted-media";
+    songDiv.appendChild(playButton);
+
+    musicFeed.appendChild(songDiv);
+  });
+}
+
   
   
 
@@ -117,14 +119,14 @@ function displaySongs(songs, playlistContainer) {
   searchButton.addEventListener("click", async () => {
     const query = searchInput.value.trim();
     if (query) {
-      const albums = await searchAlbums(accessToken, query);
-      displayAlbums(albums, "#search-results");
+      const tracks = await searchTracks(accessToken, query); // Use searchTracks instead of searchAlbums
+      displaySongs(tracks, "#search-results"); // Use displaySongs instead of displayAlbums
     }
   });
 })();
 
-async function searchAlbums(accessToken, query) {
-  const apiUrl = `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=album&market=US&limit=10`;
+async function searchTracks(accessToken, query) {
+  const apiUrl = `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track&market=US&limit=10`;
 
   const response = await fetch(apiUrl, {
     headers: {
@@ -134,5 +136,5 @@ async function searchAlbums(accessToken, query) {
   });
 
   const data = await response.json();
-  return data.albums.items;
+  return data.tracks.items; // Return track items instead of album items
 }
