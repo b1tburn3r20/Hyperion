@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +8,28 @@
   <body>
     <!-- Replace the existing navbar HTML with the following line -->
     <div id="navbar-placeholder"></div>
-
+    <!-- Add the search bar and search results container -->
+    <div class="search-container">
+      <button id="search-button">Search</button>
+      <input type="text" id="search-bar" placeholder="Search Spotify..." />
+      <div id="search-results" class="music_feed"></div>
+    </div>
+    <div class="search-results-wrapper">
+      <div id="search-results-songs" class="search-results-container">
+        <h2 class="music_header" id="searchHeader" style="display: none">
+          Results for: <span id="searchQuery"></span>
+        </h2>
+        <div class="music_feed"></div>
+      </div>
+      <div id="search-results-albums" class="search-results-container">
+        <h2 class="music_header" style="display: none">Albums</h2>
+        <div class="music_feed"></div>
+      </div>
+      <div id="search-results-playlists" class="search-results-container">
+        <h2 class="music_header" style="display: none">Playlists</h2>
+        <div class="music_feed"></div>
+      </div>
+    </div>
     <div class="playlists_wrapper">
       <div id="playlist1" class="music_container">
         <h1 class="music_header">Calm</h1>

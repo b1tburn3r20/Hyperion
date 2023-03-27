@@ -16,6 +16,115 @@ async function getAccessToken() {
   return data.access_token;
 }
 
+// Function to search for songs
+async function searchSongs(accessToken, query) {
+  const apiUrl = `https://api.spotify.com/v1/search?q=${encodeURIComponent(
+    query
+  )}&type=track&market=US&limit=10`;
+
+  const response = await fetch(apiUrl, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + accessToken,
+    },
+  });
+
+  const data = await response.json();
+  return data.tracks.items;
+}
+// Add an event listener for the search bar
+document.querySelector("#search-bar").addEventListener("keyup", async (event) => {
+  if (event.keyCode === 13) { // Enter key
+    const query = event.target.value;
+    document.querySelector("#searchQuery").innerHTML = `&ldquo;<em>${query}</em>&rdquo;`;
+    document.querySelector("#searchHeader").style.display = "block"; // Show the search header
+    searchSpotify(query);
+  }
+});
+
+
+document.querySelector("#search-bar").addEventListener("keyup", (event) => {
+  if (event.keyCode === 13) { // Enter key
+    searchSpotify(event.target.value);
+  }
+});
+
+async function searchSpotify(query) {
+  if (!query) return;
+
+  const accessToken = await getAccessToken();
+  const apiUrl = `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track,album,playlist&market=US&limit=10`;
+
+  const response = await fetch(apiUrl, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + accessToken,
+    },
+  });
+
+  const data = await response.json();
+  const tracks = data.tracks.items;
+  const albums = data.albums.items;
+  const playlists = data.playlists.items;
+
+  // Clear existing results
+  document.querySelectorAll(".music_feed").forEach((feed) => {
+    feed.innerHTML = "";
+  });
+
+  // Update the search query header with italicized text and quotes
+  document.querySelector("#searchQuery").innerHTML = `&ldquo;<em>${query} </em>&rdquo;`;
+
+  // Display search results in the new container
+  displaySongs(tracks.map((track) => ({ track })), "#searchResults");
+  displayAlbums(albums, "#searchResults");
+  displayPlaylists(playlists, "#searchResults");
+}
+
+
+function displayAlbums(albums, containerSelector) {
+  const container = document.querySelector(containerSelector + " .music_feed");
+
+  albums.forEach((album) => {
+    const albumDiv = document.createElement("div");
+    albumDiv.className = "music_album";
+
+    const albumTitle = document.createElement("h3");
+    albumTitle.textContent = album.name;
+    albumDiv.appendChild(albumTitle);
+
+    const albumImg = document.createElement("img");
+    albumImg.src = album.images[1].url;
+    albumImg.width = "300";
+    albumImg.height = "300";
+    albumDiv.appendChild(albumImg);
+
+    container.appendChild(albumDiv);
+  });
+}
+
+function displayPlaylists(playlists, containerSelector) {
+  const container = document.querySelector(containerSelector + " .music_feed");
+
+  playlists.forEach((playlist) => {
+    const playlistDiv = document.createElement("div");
+    playlistDiv.className = "music_playlist";
+
+    const playlistTitle = document.createElement("h3");
+    playlistTitle.textContent = playlist.name;
+    playlistDiv.appendChild(playlistTitle);
+
+    const playlistImg = document.createElement("img");
+    playlistImg.src = playlist.images[0].url;
+    playlistImg.width = "300";
+    playlistImg.height = "300";
+    playlistDiv.appendChild(playlistImg);
+
+    container.appendChild(playlistDiv);
+  });
+}
+
+
 // Function to fetch playlist data
 async function fetchPlaylist(accessToken, playlistId, playlistContainer) {
     const apiUrl = "https://api.spotify.com/v1/playlists/" + playlistId;
