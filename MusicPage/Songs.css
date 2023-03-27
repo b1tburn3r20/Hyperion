@@ -171,25 +171,33 @@ body {
   width: 80%;
   margin-bottom: 3rem;
 }
+.results-h2 {
+}
 .results-feed {
   display: flex;
+  text-align: center;
   background: transparent;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
-  height: 50vh;
-  width: 80vw;
+  height: auto;
+  width: auto;
   margin-bottom: 3rem;
 }
 @media (max-width: 768px) {
   .playlists_wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 2rem; /* Increase the gap between playlists on smaller screens */
+    margin: 0;
   }
 
-  .music_container {
-    width: 90%; /* Set a width for the music containers on smaller screens */
+  .results-feed .music_song {
+    display: block;
+    width: 100%;
+  }
+  .music-feed .music_song {
+    display: block;
+    width: 100%;
   }
 }
