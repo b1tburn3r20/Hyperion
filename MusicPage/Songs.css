@@ -171,6 +171,12 @@ body {
   width: 80%;
   margin-bottom: 3rem;
 }
+.music-main-header {
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8rem;
+}
 
 .results-feed {
   display: flex;
@@ -198,5 +204,11 @@ body {
   .music-feed .music_song {
     display: block;
     width: 100%;
+  }
+  .music-main-header {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
   }
 }
