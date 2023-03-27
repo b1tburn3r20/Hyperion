@@ -79,11 +79,22 @@ function displaySongs(songs, playlistContainer) {
 const searchButton = document.getElementById("search-button");
 const searchInput = document.getElementById("search-input");
 
+
+
 searchButton.addEventListener("click", async () => {
   const query = searchInput.value.trim();
   if (query) {
     const tracks = await searchTracks(accessToken, query);
     displaySearchResults(tracks); // Replace displaySongs with displaySearchResults
+  }
+});
+searchInput.addEventListener("keypress", async (event) => {
+  if (event.key === "Enter") {
+    const query = searchInput.value.trim();
+    if (query) {
+      const tracks = await searchTracks(accessToken, query);
+      displaySearchResults(tracks);
+    }
   }
 });
 
@@ -103,7 +114,12 @@ async function searchTracks(accessToken, query) {
   return data.tracks.items; // Return track items instead of album items
 }
 // New function to display search results in the results-feed div
+const resultsHeading = document.querySelector(".results-h2");
+resultsHeading.style.display = "none"; // Hide the heading initially
+
+// Show the heading when search results are displayed
 function displaySearchResults(songs) {
+  resultsHeading.style.display = "block";
   const resultsFeed = document.querySelector(".results-feed");
   resultsFeed.innerHTML = ""; // Clear the feed
 
