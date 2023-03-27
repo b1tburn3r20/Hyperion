@@ -43,12 +43,6 @@ document.querySelector("#search-bar").addEventListener("keyup", async (event) =>
 });
 
 
-document.querySelector("#search-bar").addEventListener("keyup", (event) => {
-  if (event.keyCode === 13) { // Enter key
-    searchSpotify(event.target.value);
-  }
-});
-
 async function searchSpotify(query) {
   if (!query) return;
 
@@ -61,7 +55,7 @@ async function searchSpotify(query) {
       Authorization: "Bearer " + accessToken,
     },
   });
-
+  
   const data = await response.json();
   const tracks = data.tracks.items;
   const albums = data.albums.items;
@@ -76,10 +70,11 @@ async function searchSpotify(query) {
   document.querySelector("#searchQuery").innerHTML = `&ldquo;<em>${query} </em>&rdquo;`;
 
   // Display search results in the new container
-  displaySongs(tracks.map((track) => ({ track })), "#searchResults");
-  displayAlbums(albums, "#searchResults");
-  displayPlaylists(playlists, "#searchResults");
+  displaySongs(tracks.map((track) => ({ track })), "#search-results");
+  displayAlbums(albums, "#search-results");
+  displayPlaylists(playlists, "#search-results");
 }
+
 
 
 function displayAlbums(albums, containerSelector) {
