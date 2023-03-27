@@ -173,11 +173,13 @@ body {
 }
 .results-feed {
   display: flex;
+  background: transparent;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  flex-direction: column;
-  width: 80%;
+  flex-direction: row;
+  height: 50vh;
+  width: 80vw;
   margin-bottom: 3rem;
 }
 @media (max-width: 768px) {
