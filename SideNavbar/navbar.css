@@ -9,6 +9,33 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #ffffff;
 }
+.crown:hover i {
+  color: gold;
+  box-shadow: inset 0 0 15px rgba(255, 215, 0, 0.8),
+    0 0 15px rgba(255, 215, 0, 0.8);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.youtube:hover i {
+  color: #ff0000;
+  transition: all 0.3s ease;
+}
+
+.spotify:hover i {
+  color: #1db954;
+  transition: all 0.3s ease;
+}
+
+.messages:hover i {
+  color: rgb(119, 255, 244);
+  transition: all 0.3s ease;
+}
+
+.completed:hover i {
+  color: gold;
+  transition: all 0.3s ease;
+}
 
 nav {
   width: 100vw;
