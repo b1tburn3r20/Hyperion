@@ -13,13 +13,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   margin: 3rem 0;
 }
 
 /* Search bar styling */
 #search-input {
-  width: 80%;
-  max-width: 600px;
+  width: 40%;
   padding: 0.8rem 1.5rem;
   font-size: 1.2rem;
   font-family: "Montserrat", sans-serif;
@@ -200,6 +200,22 @@ body {
   width: auto;
   margin-bottom: 3rem;
 }
+.search-container {
+  position: relative; /* Add position relative to the search container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 3rem 0;
+}
+
+/* Search button styling */
+#search-button {
+  position: absolute;
+  top: -13%;
+  right: 28%;
+  font-size: 1.1rem;
+}
 @media (max-width: 768px) {
   .playlists_wrapper {
     flex-direction: column;
@@ -220,5 +236,33 @@ body {
     font-weight: bold;
     text-align: center;
     margin-top: 2rem;
+  }
+  .search-container {
+    position: relative; /* Add position relative to the search container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 3rem 0;
+  }
+  #search-input {
+    width: 70%;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  .music-main-header {
+    font-size: 4rem;
+  }
+  .music_header {
+    font-size: 3rem;
+  }
+
+  /* Search button styling */
+  #search-button {
+    position: absolute;
+    top: -14%;
+    right: 10%;
+    font-size: 1rem;
+    z-index: 999;
   }
 }
