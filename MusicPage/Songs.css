@@ -167,11 +167,7 @@ body {
 .search-results-container:not(:first-child) {
   margin-left: 3rem;
 }
-.results-box {
-  background-color: red;
-  width: 80vw;
-  height: 40vh;
-}
+
 .music_feed {
   display: flex;
   flex-wrap: wrap;
@@ -212,9 +208,12 @@ body {
 /* Search button styling */
 #search-button {
   position: absolute;
-  top: -13%;
-  right: 28%;
+  top: -25%;
+  right: 28.5%;
   font-size: 1.1rem;
+}
+.results-h2 {
+  text-align: center;
 }
 @media (max-width: 768px) {
   .playlists_wrapper {
@@ -260,8 +259,8 @@ body {
   /* Search button styling */
   #search-button {
     position: absolute;
-    top: -14%;
-    right: 10%;
+    top: -29%;
+    right: 11%;
     font-size: 1rem;
     z-index: 999;
   }
