@@ -98,6 +98,7 @@ html {
   flex-grow: 1;
   margin: 0 1rem;
   padding-bottom: 1rem;
+  position: relative;
 }
 
 .updates_input {
@@ -115,11 +116,9 @@ html {
 
 .icons {
   position: absolute;
-  right: 6.5rem;
-  top: 0;
-  bottom: 1rem;
-  display: flex;
-  align-items: center;
+  right: 2rem; /* Update this value */
+  top: 50%;
+  transform: translateY(-50%); /* Add this line */
   padding-right: 1rem;
   color: rgb(215, 215, 215);
   cursor: pointer;
