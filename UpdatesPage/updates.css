@@ -113,7 +113,7 @@ html {
   border: solid 2px #ccc;
 }
 
-.icons {
+.update_icons {
   position: absolute;
   right: 0.5rem; /* Update this value */
   top: 40%;
@@ -181,7 +181,7 @@ html {
     padding-right: 2rem;
   }
 
-  .icons {
+  .update_icons {
     right: 0.5rem;
     top: 50%;
   }
