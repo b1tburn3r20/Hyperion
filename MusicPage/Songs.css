@@ -108,11 +108,21 @@ body {
 .playlists_wrapper {
   display: flex;
   justify-content: space-between;
-  margin-left: calc(
-    3rem + 50px
-  ); /* Adjust this value based on the width of your navbar */
+  margin-left: calc(3rem + 50px);
   margin-right: 3rem;
   gap: 1rem;
+}
+#playlist1 {
+  margin-top: 0;
+  padding-top: 0;
+}
+#playlist2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+#playlist3 {
+  margin-top: 0;
+  padding-top: 0;
 }
 .music_container {
   display: flex;
@@ -175,7 +185,7 @@ body {
   font-size: 5rem;
   font-weight: bold;
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 2rem;
 }
 
 .results-feed {
