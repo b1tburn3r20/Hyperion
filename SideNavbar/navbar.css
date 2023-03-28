@@ -42,8 +42,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(51, 51, 51, 0.7);
-  backdrop-filter: blur(10px);
+  background-color: rgb(51, 51, 51, 0.8);
+  backdrop-filter: blur(15px);
   text-decoration: none;
   position: fixed;
   bottom: 0;
