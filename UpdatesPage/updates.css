@@ -28,6 +28,7 @@ html {
 .page-header {
   text-align: center;
   padding: 1rem;
+  border-bottom: 1px solid rgb(50, 50, 50);
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -110,7 +111,7 @@ html {
   padding-right: 4rem;
   border-radius: 2.5rem;
   color: white;
-  border: solid 2px #ccc;
+  border: solid 2px rgb(50, 50, 50);
 }
 
 .update_icons {
@@ -142,6 +143,9 @@ html {
 .menu-container {
   z-index: 1000;
 }
+.updates_input::placeholder {
+  font-style: italic;
+}
 
 @media only screen and (max-width: 768px) {
   .chat-container {
@@ -150,10 +154,12 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 0;
   }
 
   .chat-message {
-    max-width: 90%;
+    width: 100%;
+    margin-left: 0;
   }
 
   .chat-message-left,
