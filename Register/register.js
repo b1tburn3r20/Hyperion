@@ -33,10 +33,6 @@ submitButton.addEventListener('click', (event) => {
       // Redirect to login page
       window.location.href = '/login.html';
     })
-    .catch(error => {
-      // Handle errors
-      console.error(error);
-      alert('Error registering user. Please try again later.');
-    });
+    
     // comment
 });

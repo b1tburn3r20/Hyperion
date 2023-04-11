@@ -3,6 +3,12 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const router = express.Router();
 
+
+router.get('/register', (req, res) => {
+  res.render('/Register/register.html'); // Assuming you are using a templating engine like EJS or Handlebars
+});
+
+
 router.post('/register', async (req, res) => {
   const { username, password } = req.body;
 
