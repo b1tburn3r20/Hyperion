@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
-    <link rel="stylesheet" href="login.css" />
+    <title>Register Page</title>
+    <link rel="stylesheet" href="register.css" />
   </head>
   <body>
     <div id="navbar-placeholder"></div>
@@ -13,6 +13,13 @@
         <h1>Hyperion</h1>
       </div>
       <form class="login-form">
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required
+        />
         <input
           type="email"
           id="email"
@@ -27,17 +34,21 @@
           placeholder="Password"
           required
         />
-        <button type="submit">Sign in</button>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          placeholder="Confirm Password"
+          required
+        />
+        <button type="submit">Sign up</button>
       </form>
       <div class="link-container">
-        <p class="register">
-          <a href="/Register/register.html">New User? Register</a>
-        </p>
-        <p class="forgot-password"><a href="">Forgot password?</a></p>
+        <p class="register"><a href="#">Already have an account? Login</a></p>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="load_navbar.js"></script>
-    <script src="login.js"></script>
+    <script src="register.js"></script>
   </body>
 </html>
