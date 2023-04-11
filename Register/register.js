@@ -38,4 +38,5 @@ submitButton.addEventListener('click', (event) => {
       console.error(error);
       alert('Error registering user. Please try again later.');
     });
+    // comment
 });
