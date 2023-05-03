@@ -2,13 +2,13 @@ const apiKey = 'AIzaSyDli9flxzGchlW_d2kZLyc9lO7NNqi8nDc';
 
 // Static video display
 const videoIds = [
-    'bgZJaeolnH4',
-    'XqDy1V7PM8s',
-    'ZA9K0JMrbWg',
-    'OE2NPmqZ9nM',
-    'A--rMdBSHmU',
-    '56uSDQECrRQ',
-    'OYIKrTW8Huo'];
+  '2apFAwOwlBc',
+  'XqDy1V7PM8s',
+  'ZA9K0JMrbWg',
+  'OE2NPmqZ9nM',
+  'A--rMdBSHmU',
+  '56uSDQECrRQ',
+  'OYIKrTW8Huo'];
 const videoDivs = [
   document.querySelector('.home_video1'),
   document.querySelector('.home_video2'),
